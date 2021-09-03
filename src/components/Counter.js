@@ -25,7 +25,7 @@ function Counter() {
   // Create handleIncrement event handler
   const handleIncrement = () => {
     if(count < maxVal){
-        setCount(prevCount => prevCount + 1);
+        setCount(count + 1);
     }
     else {
         console.log('Max Reached');
@@ -34,12 +34,17 @@ function Counter() {
 
   //Create handleDecrement event handler
   const handleDecrement = () => {
-    setCount(prevCount => prevCount - 1);
+    setCount(count - 1);
   };
   return (
 	  <div><div class="split left">
 		  <h1 class="headings">Initialzer</h1>
+		  	<div class="alertboxset">
+
+			  <div class="alert alert-info" role="alert">You can Set Initial Value and Max Value by default it is set to 1 and 1000</div>
+			  </div>
 			<div class="initial">
+			
 				<input
 					id="initial-input"
 					onChange={(e) => setInitialVal(Number(e.target.value))}
@@ -70,7 +75,9 @@ function Counter() {
 	  </div>
 	  <div class="split right">
 		  <h1 class="headings">Counter</h1>
-		  
+		  <div class="alertboxset">
+<div class="alert alert-info" role="alert">Use Counter Here. It will Start form Initial Value upto Max Value</div>
+</div>
 		  <div class="centered">
 		<div class="counter">
 			<button
@@ -92,7 +99,7 @@ function Counter() {
 
 			<button
 				id="increment"
-				className="btn"
+				className="btnplus"
 				title="Increment"
 				onClick={handleIncrement}
 			>
