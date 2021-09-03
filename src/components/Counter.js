@@ -47,7 +47,9 @@ function Counter() {
 			
 				<input
 					id="initial-input"
-					onChange={(e) => setInitialVal(Number(e.target.value))}
+					onChange={(e) => 
+						e.target.value <= maxVal? setInitialVal(Number(e.target.value)): alert("Initial Value should be Less then Max Value")
+					}
 					value={initialVal}
 					type="number"
 					placeholder="Enter initial value"
@@ -63,7 +65,9 @@ function Counter() {
 			<div class="initial">
 				<input
 					id="max-val-input"
-					onChange={(e) => setStoreMax(Number(e.target.value))}
+					onChange={(e) => 
+						e.target.value >= initialVal?setStoreMax(Number(e.target.value)):alert("Max Value should be greater then Initial Value")
+					}
 					value={storeMax}
 					type="number"
 					placeholder="Enter maximum value"
