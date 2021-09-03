@@ -56,6 +56,7 @@ function Counter() {
 				></input>
 				<button
 					className="btn"
+					title="Set Initial Value"
 					onClick={() => setCount(initialVal)}
 				>
 					Set Initial Value
@@ -72,7 +73,10 @@ function Counter() {
 					type="number"
 					placeholder="Enter maximum value"
 				></input>
-				<button className="btn" onClick={() => setMax(storeMax)}>
+				<button 
+				className="btn"
+				title="Set Maximum Value"
+				onClick={() => setMax(storeMax)}>
 					Set Maximum Value
 				</button>
 			</div>
