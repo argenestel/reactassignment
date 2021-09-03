@@ -7,6 +7,7 @@ function Counter() {
   const [maxVal, setMax] = useState(1000);
   // storing max value
   const [storeMax, setStoreMax] = useState(1000);
+  const [initialVal, setInitialVal] = useState(1);
 
   const handleChange = (e) => {
     const value = e.target.value.replace(/\D/g, "");
@@ -35,14 +36,43 @@ function Counter() {
   };
   return (
 	  <div><div class="split left">
-		  <h1 class="headings"></h1>
+		  <h1 class="headings">Initialzer</h1>
+			<div>
+				<input
+					id="initial-input"
+					onChange={(e) => setInitialVal(Number(e.target.value))}
+					value={initialVal}
+					type="number"
+					placeholder="Enter initial value"
+				></input>
+				<button
+					className="btn"
+					onClick={() => setCount(initialVal)}
+				>
+					Set Initial Value
+				</button>
+			</div>
+
+			<div>
+				<input
+					id="max-val-input"
+					onChange={(e) => setStoreMax(Number(e.target.value))}
+					value={storeMax}
+					type="number"
+					placeholder="Enter maximum value"
+				></input>
+				<button className="btn" onClick={() => setMax(storeMax)}>
+					Set Maximum Value
+				</button>
+			</div>
 	  </div>
 	  <div class="split right">
 		  <h1 class="headings">Counter</h1>
+		  
 		  <div class="centered">
-		<div id="counter">
+		<div class="counter">
 			<button
-				id="decrement-btn"
+				id="decrement"
 				className="btn"
 				title="Decrement"
 				onClick={handleDecrement}
@@ -53,13 +83,13 @@ function Counter() {
 			<input
 				type="number"
 				title="Counter value"
-				id="counter-in"
+				class="counterinput"
 				value={count}
 				onChange={handleChange}
 			></input>
 
 			<button
-				id="increment-btn"
+				id="increment"
 				className="btn"
 				title="Increment"
 				onClick={handleIncrement}
