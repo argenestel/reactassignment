@@ -4,9 +4,11 @@ import "../css/counter.css"
 function Counter() {
   // Set the initial count state to zero, 0
   const [count, setCount] = useState(1);
+  // Set max value
   const [maxVal, setMax] = useState(1000);
   // storing max value
   const [storeMax, setStoreMax] = useState(1000);
+  // Start Initial Value
   const [initialVal, setInitialVal] = useState(1);
 
   const handleChange = (e) => {
@@ -37,7 +39,7 @@ function Counter() {
   return (
 	  <div><div class="split left">
 		  <h1 class="headings">Initialzer</h1>
-			<div>
+			<div class="initial">
 				<input
 					id="initial-input"
 					onChange={(e) => setInitialVal(Number(e.target.value))}
@@ -53,7 +55,7 @@ function Counter() {
 				</button>
 			</div>
 
-			<div>
+			<div class="initial">
 				<input
 					id="max-val-input"
 					onChange={(e) => setStoreMax(Number(e.target.value))}
